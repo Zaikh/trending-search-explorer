@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category Trends</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🌍 TrendExplorer</div>
+  </header>
+
+  <main>
+    <h2 id="category-title">Category</h2>
+    <ul id="category-list">
+      <li>Loading...</li>
+    </ul>
+  </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const type = urlParams.get("type");
+
+    document.getElementById("category-title").textContent = `${type.toUpperCase()} Trends`;
+
+    fetch("trends.json")
+      .then(res => res.json())
+      .then(data => {
+        const filtered = data.filter(item => item.category.toLowerCase() === type);
+        const list = document.getElementById("category-list");
+        list.innerHTML = "";
+
+        filtered.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item.title;
+          list.appendChild(li);
+        });
+
+        if (filtered.length === 0) {
+          list.innerHTML = "<li>No trends in this category yet.</li>";
+        }
+      });
+  </script>
+</body>
+</html>
