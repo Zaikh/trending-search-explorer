@@ -17,39 +17,16 @@
   --card: #1e293b;
 }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  transition: background 0.3s, color 0.3s;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: var(--card);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
 /* From Uiverse.io by Galahhad */ 
 .theme-switch {
-  --toggle-size: 30px;
-  /* the size is adjusted using font-size,
-     this is not transform scale,
-     so you can choose any size */
-  --container-width: 5.625em;
-  --container-height: 2.5em;
+  --toggle-size: 20px;          /* pehle 30px tha */
+  --container-width: 3.5em;     /* pehle 5.625em tha */
+  --container-height: 1.5em;    /* pehle 2.5em tha */
   --container-radius: 6.25em;
-  /* radius 0 - minecraft mode :) */
   --container-light-bg: #3D7EAE;
   --container-night-bg: #1D1F2C;
-  --circle-container-diameter: 3.375em;
-  --sun-moon-diameter: 2.125em;
+  --circle-container-diameter: 2.2em; /* pehle 3.375em */
+  --sun-moon-diameter: 1.4em;        /* pehle 2.125em */
   --sun-bg: #ECCA2F;
   --moon-bg: #C4C9D1;
   --spot-color: #959DB1;
@@ -60,6 +37,7 @@ body {
   --transition: .5s cubic-bezier(0, -0.02, 0.4, 1.25);
   --circle-transition: .3s cubic-bezier(0, -0.02, 0.35, 1.17);
 }
+
 
 .theme-switch, .theme-switch *, .theme-switch *::before, .theme-switch *::after {
   -webkit-box-sizing: border-box;
@@ -238,6 +216,26 @@ body {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--card);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .logo {
